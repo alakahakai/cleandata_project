@@ -10,6 +10,7 @@ Filtering by the names can retrieve the column numbers for mean and std, then us
 we can subset the data set to only mean and std.
 
 The activity_labels has the following data:
+```
   label           activity
 1     1            WALKING
 2     2   WALKING_UPSTAIRS
@@ -17,7 +18,7 @@ The activity_labels has the following data:
 4     4            SITTING
 5     5           STANDING
 6     6             LAYING
-
+```
 Using this data, we can map the labels in the label dataset to activities.
 
 Now we combine the label dataframe with the combined dataset X, as well as the subject dataframe.  
@@ -25,6 +26,7 @@ Then we perform a group_by to break the dataset into groups where activity and s
 the summarise_each function in dplyr, we can get the final dataset.
 
 The final data set has the following columns:
+```
  [1] "activity"                  "subject"                   "tBodyAccMag.mean"         
  [4] "tBodyAccMag.std"           "tGravityAccMag.mean"       "tGravityAccMag.std"       
  [7] "tBodyAccJerkMag.mean"      "tBodyAccJerkMag.std"       "tBodyGyroMag.mean"        
@@ -32,5 +34,6 @@ The final data set has the following columns:
 [13] "fBodyAccMag.mean"          "fBodyAccMag.std"           "fBodyBodyAccJerkMag.mean"
 [16] "fBodyBodyAccJerkMag.std"   "fBodyBodyGyroMag.mean"     "fBodyBodyGyroMag.std"     
 [19] "fBodyBodyGyroJerkMag.mean" "fBodyBodyGyroJerkMag.std"
+```
 
 We then write the final dataset to file. Done!
