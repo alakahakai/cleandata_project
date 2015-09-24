@@ -1,7 +1,7 @@
 
 # README for Course Project
-## Author: Ray Qiu
-## Date: Sept 23rd, 2015
+  Author: Ray Qiu
+  Date: Sept 23rd, 2015
 
 The training and test data sets have the same 561 features, which are listed in features.txt.
 A simple rbind combines the two data sets into one (dataset X). Same goes for the label datasets.
