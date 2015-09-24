@@ -2,17 +2,17 @@
 library(dplyr)
 library(tidyr)
 ## Read training and test data sets 
-train <- read.table("train/X_train.txt")
-test <- read.table("test/X_test.txt")
+train <- read.table("UCI HAR Dataset/train/X_train.txt")
+test <- read.table("UCI HAR Dataset/test/X_test.txt")
 ## Combine the data sets into one
 dat <- rbind(train, test)
 ## Read the subjects and combine into one
-train_subjects <- read.table("train/subject_train.txt")
-test_subjects <- read.table("test/subject_test.txt")
+train_subjects <- read.table("UCI HAR Dataset/train/subject_train.txt")
+test_subjects <- read.table("UCI HAR Dataset/test/subject_test.txt")
 subjects <- rbind(train_subjects, test_subjects)
 names(subjects) <- "subject"
 ## Read the features text file and name the columns
-features <- read.table("features.txt", stringsAsFactors = FALSE)
+features <- read.table("UCI HAR Dataset/features.txt", stringsAsFactors = FALSE)
 names(features) <- c("colNumber", "feature")
 ## define a helper function to retrieve string from right side
 substrRight <- function(x, n){
@@ -26,8 +26,8 @@ dat <- dat[cols$colNumber]
 ## name the dataset using the info provided by feature.txt
 names(dat) <- substr(cols$feature, 1, nchar(cols$feature) -2)
 ## read the labels for train and test data sets, and combine them with dat
-train_labels <- read.table("train/y_train.txt")
-test_labels <- read.table("test/y_test.txt")
+train_labels <- read.table("UCI HAR Dataset/train/y_train.txt")
+test_labels <- read.table("UCI HAR Dataset/test/y_test.txt")
 labels <- rbind(train_labels, test_labels)
 names(labels) <- "label"
 ## Convert the labels to meaningful activities
