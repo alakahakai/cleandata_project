@@ -31,7 +31,7 @@ test_labels <- read.table("UCI HAR Dataset/test/y_test.txt")
 labels <- rbind(train_labels, test_labels)
 names(labels) <- "label"
 ## Convert the labels to meaningful activities
-activity_labels <- read.table("activity_labels.txt")
+activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt")
 names(activity_labels) <- c("label", "activity")
 ## define a helper function to map labels to activities
 map_activity <- function(l) {
